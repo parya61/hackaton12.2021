@@ -1,0 +1,60 @@
+{% extends 'unfaces/base.html' %}
+
+{% block title %}
+new
+{% endblock %}
+
+
+{% block content %}
+<form   method="post">
+
+    <div class="profi_item">
+        <div class="block">
+          <div class="container">
+            <h1 style="color:#FFF; text-align:center;">Введите текст</h1>
+            <p><textarea  id='name' name='name' placeholder="Введите текст для обезличивания"></textarea></p>
+            <input type="submit" class="button success" value="Обработать">
+          </div>
+        </div>
+
+      <div class="block1">
+        <div class="container">
+          <h1 style="color:#FFF; text-align:center;">Обработанный текст</h1>
+          <p><textarea  id='hop' name='hop' value=""></textarea></p>
+          <input type="button" class="button" value="Сохранить в БД">
+        </div>
+    </div>
+      <!-- <button type="submit" class="btn btn-success" >Выполнить</button> -->
+
+  </div>
+  </form>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+
+let menuToggle = document.querySelector('.toggle');
+let navigation = document.querySelector('.navigation');
+// let block = document.querySelector('.block');
+
+menuToggle.onclick = function(){
+menuToggle.classList.toggle('active');
+navigation.classList.toggle('active');
+// block.classList.toggle('active');
+}
+
+let list = document.querySelectorAll('.list');
+for (let i=0; i<list.length; i++){
+list[i].onclick = function(){
+  let j = 0;
+  while (j< list.length) {
+    list[j++].className = 'list';
+  }
+  list[i].className = 'list active';
+
+}
+}
+</script>
+{% endblock %}
